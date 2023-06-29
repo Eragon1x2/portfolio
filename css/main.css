@@ -330,7 +330,9 @@ header nav a:hover {
     font-weight: 700;
     color: rgb(208, 255, 0);
 }
-
+.portfolio_div {
+    padding-right: 12px;
+}
 .portfolio_div li:hover {
     background-image: none;
     background-color: #151515;
