@@ -306,9 +306,8 @@ header nav a:hover {
     height: 238px;
     background-image: url('../img/blog.png');
     border-radius: 20px;
-    background-size: contain;
     background-repeat: no-repeat;
-    background-size: 431px 238px;
+    background-size: 100% 100%;
 }
 .portfolio_div li:nth-child(2) {
     background-image: url('../img/knowledge.png');
