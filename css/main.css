@@ -68,7 +68,7 @@ body {
 .close_left_panel {
     display: none;
     position: absolute;
-    left: 10px;
+    right: 10px;
     top: 10px;
 }
 .header_mobile img {
@@ -126,6 +126,13 @@ header nav a:hover {
     background-color: rgb(0, 0, 0);
     border: 2px solid #39ff14;
     margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left_panel div h5 {
+    width: 250px;
+    color: #39ff14;
 }
 .left_panel h2, p {
     color: white;
@@ -483,14 +490,16 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 .funny ul {
     max-width: 800px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 .funny ul li p {
+    max-width: 200px;
     margin-top: 20px;
 }
 .funny ul li h8 {
@@ -502,7 +511,15 @@ footer {
     width: 30px;
     margin-right: 5px;
 }
+@media(max-width: 1024.9px) {
+    .funny {
+        width: 100%;
+    }
+}
 @media(max-width: 768.9px) {
+    .funny {
+        width: 100%;
+    }
     .funny ul {
         width: 100%;
     }

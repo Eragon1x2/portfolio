@@ -3,6 +3,7 @@ const nav = document.querySelector('.header-nav');
 const navA = document.querySelectorAll('.header-nav a');
 const divs = document.querySelectorAll('.main-givno');
 const p = document.querySelector('.left_panel p');
+const h5_p = document.querySelector('.left_panel h5')
 const a = document.querySelectorAll('a');
 const border_img = document.querySelector('.left_panel div');
 const footer_icon = document.querySelectorAll('.list_gg a span img');
@@ -25,6 +26,7 @@ for (index = 0; index < navA.length; index++) {
                     main_givno_sho.classList.add('animate__backInLeft')
                     border_img.style.border = '2px solid yellow';
                         p.style.color = 'yellow';
+                        h5_p.style.color = 'yellow';
                         for(b = 0; b < a.length; b++) {
                             a[b].style.color = 'yellow';
                         }
@@ -37,6 +39,7 @@ for (index = 0; index < navA.length; index++) {
                 
                         border_img.style.border = '2px solid #39ff14';
                             p.style.color = '#39ff14';
+                            h5_p.style.color = '#39ff14';
                             for(b = 0; b < a.length; b++) {
                                 a[b].style.color = '#39ff14';
                             }
