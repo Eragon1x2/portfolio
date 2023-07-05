@@ -147,6 +147,9 @@ header nav a:hover {
     font-weight: 300;
     margin-top: 20px;
 }
+.left_panel a {
+    margin-bottom: 20px;
+}
 .main-block {
     width: calc(100%);
     overflow-x: hidden;
