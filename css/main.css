@@ -331,6 +331,10 @@ header nav a:hover {
 .portfolio_div li:nth-child(6) {
     background-image: url('../img/bags.png');
 }
+.react_portfolio li:nth-child(1) {
+    border: 1px solid black;
+    background-image: url('../img/audio_player.png');
+}
 .portfolio_div h4 {
     font-size: 25px;
     margin-top: 20px;
