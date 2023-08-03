@@ -1,29 +1,29 @@
 AOS.init();
-const nav = document.querySelector('.header-nav');
-const navA = document.querySelectorAll('.header-nav a');
-const divs = document.querySelectorAll('.main-givno');
+const link_next = document.querySelector('.header-nav');
+const links = document.querySelectorAll('.header-nav a');
+const blocks = document.querySelectorAll('.block');
 const p = document.querySelector('.left_panel p');
 const h5_p = document.querySelector('.left_panel h5')
 const a = document.querySelectorAll('a');
 const border_img = document.querySelector('.left_panel div');
 const footer_icon = document.querySelectorAll('.list_gg a span img');
 const footer_button = document.querySelector('.footer_list li button');
-const main_givno_sho = document.querySelector('.main-givno-sho');
-for (index = 0; index < navA.length; index++) {
-    const navs = navA[index];
+const block_next = document.querySelector('.block_next');
+for (index = 0; index < links.length; index++) {
+    const navs = links[index];
     navs.addEventListener('click', function (event) {
         event.preventDefault();
-        navA.forEach(a => {
+        links.forEach(a => {
             a.style.scale = '0.9';
         })
         event.target.style.scale = '1.2';
-        for(gg = 0; gg < divs.length; gg++) {
-            const govno = divs[gg];
-            if(govno.id === event.target.id) {
-                govno.style.display = 'block';
-                if(govno.id === 'portfolio') {
-                    main_givno_sho.classList.remove('animate__backInRight');
-                    main_givno_sho.classList.add('animate__backInLeft')
+        for(gg = 0; gg < blocks.length; gg++) {
+            const block = blocks[gg];
+            if(block.id === event.target.id) {
+                block.style.display = 'block';
+                if(block.id === 'portfolio') {
+                    block_next.classList.remove('animate__backInRight');
+                    block_next.classList.add('animate__backInLeft');
                     border_img.style.border = '2px solid yellow';
                         p.style.color = 'yellow';
                         h5_p.style.color = 'yellow';
@@ -35,7 +35,7 @@ for (index = 0; index < navA.length; index++) {
                         })
                         footer_button.style.backgroundColor = 'rgb(255, 255, 206)';
                         }
-                    if(govno.id === 'about') {
+                    if(block.id === 'about') {
                 
                         border_img.style.border = '2px solid #39ff14';
                             p.style.color = '#39ff14';
@@ -50,7 +50,7 @@ for (index = 0; index < navA.length; index++) {
                 }
             }
             else {
-                govno.style.display = 'none';
+                block.style.display = 'none';
             }
         }
     });

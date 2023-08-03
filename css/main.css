@@ -155,7 +155,7 @@ header nav a:hover {
     overflow-x: hidden;
     
 }
-.main-givno {
+.block {
     width: 100%;
     display: none;
     margin-top: 100px;
@@ -163,10 +163,10 @@ header nav a:hover {
     padding-left: 70px;
 
 }
-.main-givno:nth-child(2) {
+.block:nth-child(2) {
     display: block;
 }
-.main-givno h1 {
+.block h1 {
     font-size: 30px;
     color: #fff;
     text-shadow:
@@ -195,7 +195,7 @@ header nav a:hover {
         display: block;
     }
 }
-.main-givno p {
+.block p {
     max-width: 600px;
     font-size: 17px;
     margin-top: 70px;
@@ -215,7 +215,7 @@ header nav a:hover {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.main-givno ul li {
+.block ul li {
     display: flex;
     align-items: center;
     font-size: 20px;
@@ -246,7 +246,7 @@ header nav a:hover {
 .skills ul li:nth-child(4) {
     color: #5FD6F5;
 }
-.main-givno h3 {
+.block h3 {
     font-size: 25px;
     color: #39ff14;
     margin-top: 60px;
