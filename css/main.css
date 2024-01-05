@@ -338,6 +338,10 @@ header nav a:hover {
     border: 1px solid black;
     background-image: url('../img/audio_player.png');
 }
+.react_portfolio li:nth-child(2) {
+	border: 1px solid black;
+	background-image: url('../img/candleaf.PNG');
+}
 .portfolio_div h4 {
     font-size: 25px;
     margin-top: 20px;
