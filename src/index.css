@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Outfit', system-ui, sans-serif;
+    --font-mono: 'Fira Code', monospace;
+    --color-primary: #48e5a3;
+    --color-primary-hover: #32d993;
+    --color-primary-light: #e6fcf3;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Light Theme Card Glassmorphism & Mint Accents */
+.light-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.light-card-hover:hover {
+  background: #ffffff;
+  border-color: rgba(72, 229, 163, 0.6);
+  box-shadow: 0 10px 30px -10px rgba(52, 211, 153, 0.25);
+  transform: translateY(-2px);
+}
+
+.text-gradient-mint {
+  background: linear-gradient(135deg, #0d9488 0%, #10b981 50%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-mint-primary {
+  background-color: #48e5a3;
+}
+
+.bg-mint-primary:hover {
+  background-color: #32d993;
+}
+
+.border-mint {
+  border-color: rgba(72, 229, 163, 0.4);
+}
+
+.light-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(203, 213, 225, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(203, 213, 225, 0.3) 1px, transparent 1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #48e5a3;
+}
