@@ -55,25 +55,25 @@ export const PERSONAL_INFO = {
 export const PROJECTS: Project[] = [
   {
     id: "guardrail",
-    title: "Guardrail — AI & API Security Shield",
-    description: "High-performance AI guardrail & API security proxy detecting prompt injections, BOLA flaws, and OWASP Top 10 vulnerabilities.",
-    longDescription: "Architected a real-time security middleware and monitoring dashboard built to inspect AI model inputs and REST API traffic for malicious prompt injections, unauthorized BOLA data access, and payload exploits before reaching upstream services.",
-    tags: ["FastAPI", "Python", "TypeScript", "React", "LLM Red-Teaming", "Security", "Docker"],
+    title: "Guardrail — DevSecOps API Vulnerability & Guardrail Scanner",
+    description: "High-performance DevSecOps security scanner & automated fuzzing tool inspecting REST APIs and LLM prompts for BOLA, XSS, JWT flaws, and Prompt Injections.",
+    longDescription: "High-performance DevSecOps API Vulnerability & Security Scanner. Web application where security engineers or developers input OpenAPI / FastAPI schemas or LLM prompts, and the Python backend (FastAPI + httpx) runs automated fuzzing tests for BOLA flaws, XSS, JWT vulnerabilities, and Prompt Injections, streaming real-time security telemetry over WebSockets.",
+    tags: ["FastAPI", "Python", "TypeScript", "React", "DevSecOps", "BOLA & XSS Fuzzing", "WebSockets"],
     category: "security",
     githubUrl: "https://github.com/Eragon1x2/guardrail",
     isPrivate: false,
     featured: true,
-    metrics: ["🛡️ Real-Time Prompt Injection Defense", "⚡ Sub-15ms Inspection Latency", "🔒 OWASP Top 10 Protection"],
+    metrics: ["🛡️ Real-Time BOLA & Prompt Fuzzing", "⚡ Sub-15ms Async Inspection", "📊 Live WebSockets Telemetry"],
     highlights: [
-      "Designed high-performance async FastAPI middleware inspecting inbound JSON & prompt payloads",
-      "Built interactive React + TypeScript monitoring dashboard visualizing security telemetry & attack blocks",
-      "Patched BOLA authorization bypasses and enforced strict system role prompt guardrails",
-      "Packaged into lightweight Docker container pipeline with zero-downtime deployment"
+      "Automated OpenAPI / FastAPI schema fuzzing for BOLA, XSS, SQLi, and JWT vulnerabilities",
+      "Asynchronous Python backend (FastAPI + httpx) featuring custom automated security test engine",
+      "Interactive React + TypeScript monitoring dashboard streaming live attack reports via WebSockets",
+      "AI Guardrail filter testing LLM prompts for Prompt Injection, system overrides, and data leaks"
     ],
     architectureOverview: [
-      "Engine: Async Python (FastAPI + httpx) streaming inspection proxy",
-      "Detection Pipeline: Regex pattern matcher + LLM safety classification rules",
-      "Frontend: React + Tailwind CSS live security analytics telemetry dashboard"
+      "Backend: Async Python (FastAPI + httpx) Fuzzing & Guardrail Inspection Engine",
+      "Telemetry: WebSockets real-time streaming to React frontend dashboard",
+      "Detection: OWASP Top 10 rule patterns, BOLA access validation, and LLM injection filters"
     ]
   },
   {
@@ -199,15 +199,15 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     ]
   },
   {
-    category: "Security & Guardrails",
+    category: "Security & DevSecOps",
     iconName: "ShieldAlert",
     skills: [
+      { name: "DevSecOps & API Fuzzing", level: 95, highlight: true },
       { name: "LLM Red-Teaming & Guardrails", level: 95, highlight: true },
       { name: "XSS & CSP Hardening", level: 95, highlight: true },
       { name: "SQL Injection Patches", level: 92, highlight: true },
       { name: "BOLA & Access Control", level: 90, highlight: true },
-      { name: "JWT Hardening", level: 88 },
-      { name: "Snyk Dependency Audit", level: 85 }
+      { name: "JWT Hardening", level: 88 }
     ]
   },
   {
@@ -232,12 +232,12 @@ export const EXPERIENCES: ExperienceItem[] = [
     location: "Remote",
     type: "Freelance",
     bullets: [
-      "Developing end-to-end full-stack web applications, AI guardrails, and API microservices for global clients.",
+      "Developing end-to-end full-stack web applications, DevSecOps tools, and API microservices for global clients.",
       "Architecting secure REST backends using FastAPI and PostgreSQL, integrated with modern React TypeScript frontends.",
       "Refactoring legacy web codebases, improving application stability, and optimizing page speed & Core Web Vitals.",
       "Providing technical consulting on system architecture, database design, and cloud deployments under tight deadlines."
     ],
-    techStack: ["React", "TypeScript", "FastAPI", "Python", "PostgreSQL", "Guardrail", "Tailwind CSS"]
+    techStack: ["React", "TypeScript", "FastAPI", "Python", "DevSecOps", "PostgreSQL", "Tailwind CSS"]
   },
   {
     period: "Dec 2025 – May 2026",
