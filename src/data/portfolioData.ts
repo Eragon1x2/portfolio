@@ -17,7 +17,7 @@ export interface Project {
 export interface SkillCategory {
   category: string;
   iconName: string;
-  skills: { name: string; level: number; highlight?: boolean }[];
+  skills: { name: string; highlight?: boolean }[];
 }
 
 export interface ExperienceItem {
@@ -30,11 +30,21 @@ export interface ExperienceItem {
   techStack: string[];
 }
 
+export interface HighlightStat {
+  value: string;
+  label: string;
+}
+
+export interface HighlightItem {
+  category: string;
+  description: string;
+}
+
 export const PERSONAL_INFO = {
   name: "HOHA YEVHEN",
   nameRu: "Евгений Гога",
   title: "Full-Stack Engineer",
-  subtitle: "React • TypeScript • FastAPI",
+  subtitle: "React · Next.js · TypeScript · FastAPI",
   experienceYears: "2.5+",
   location: "Brașov, Romania",
   hometown: "Odesa, Ukraine",
@@ -47,67 +57,83 @@ export const PERSONAL_INFO = {
   languages: [
     { name: "English", level: "B2 (Professional Working)" },
     { name: "Romanian", level: "B2 (Upper Intermediate)" },
-    { name: "Ukrainian", level: "C2 (Native/Bilingual)" }
+    { name: "Ukrainian", level: "Native" }
   ],
-  bio: "Full-Stack Engineer with 2.5+ years of experience building secure, high-performance web applications. Specialized in React, TypeScript, and Python (FastAPI). Strong track record in refactoring complex codebases, optimizing performance, and leveraging AI-assisted workflows (Cursor) for rapid delivery."
+  bio: "I build fast, reliable web applications with a focus on performance, security, and maintainable architecture."
 };
+
+export const HIGHLIGHT_STATS: HighlightStat[] = [
+  { value: "43%", label: "Production bundle reduction" },
+  { value: "3,000+ LOC", label: "Legacy code refactored" },
+  { value: "2.5+ years", label: "Commercial experience" },
+  { value: "Full-Stack", label: "React → FastAPI → PostgreSQL" }
+];
+
+export const HIGHLIGHT_ITEMS: HighlightItem[] = [
+  {
+    category: "Performance",
+    description: "Reduced production bundle size by 43% through code splitting, dependency optimization and build configuration."
+  },
+  {
+    category: "Architecture",
+    description: "Refactored 3,000+ lines of legacy React code and addressed race conditions affecting application stability."
+  },
+  {
+    category: "Security",
+    description: "Identified and addressed common web security issues including XSS, SQL injection, BOLA/IDOR and authentication vulnerabilities."
+  }
+];
 
 export const PROJECTS: Project[] = [
   {
-    id: "guardrail",
-    title: "Guardrail — DevSecOps API Vulnerability & Guardrail Scanner",
-    description: "High-performance DevSecOps security scanner & automated fuzzing tool inspecting REST APIs and LLM prompts for BOLA, XSS, JWT flaws, and Prompt Injections.",
-    longDescription: "High-performance DevSecOps API Vulnerability & Security Scanner. Web application where security engineers or developers input OpenAPI / FastAPI schemas or LLM prompts, and the Python backend (FastAPI + httpx) runs automated fuzzing tests for BOLA flaws, XSS, JWT vulnerabilities, and Prompt Injections, streaming real-time security telemetry over WebSockets.",
-    tags: ["FastAPI", "Python", "TypeScript", "React", "DevSecOps", "BOLA & XSS Fuzzing", "WebSockets"],
-    category: "security",
-    githubUrl: "https://github.com/Eragon1x2/guardrail",
+    id: "pointless-app",
+    title: "Pointless App",
+    category: "frontend",
+    description: "Gamified walking app focused on random destination generation and real-world micro-adventures.",
+    longDescription: "An innovative real-world exploration PWA that prompts users to step out of routine by generating randomized geographical destinations within a chosen radius.",
+    tags: ["React", "TypeScript", "Geolocation API", "Leaflet", "PWA"],
+    githubUrl: "https://github.com/Eragon1x2/pointless-app",
     isPrivate: false,
     featured: true,
-    metrics: ["🛡️ Real-Time BOLA & Prompt Fuzzing", "⚡ Sub-15ms Async Inspection", "📊 Live WebSockets Telemetry"],
+    metrics: ["🗺️ Real-Time GPS Geo-fencing", "🎲 Random Radius Generator", "🏆 Gamified Exploration"],
     highlights: [
-      "Automated OpenAPI / FastAPI schema fuzzing for BOLA, XSS, SQLi, and JWT vulnerabilities",
-      "Asynchronous Python backend (FastAPI + httpx) featuring custom automated security test engine",
-      "Interactive React + TypeScript monitoring dashboard streaming live attack reports via WebSockets",
-      "AI Guardrail filter testing LLM prompts for Prompt Injection, system overrides, and data leaks"
-    ],
-    architectureOverview: [
-      "Backend: Async Python (FastAPI + httpx) Fuzzing & Guardrail Inspection Engine",
-      "Telemetry: WebSockets real-time streaming to React frontend dashboard",
-      "Detection: OWASP Top 10 rule patterns, BOLA access validation, and LLM injection filters"
+      "Calculates distance and compass bearing using Haversine formula",
+      "Offline-first PWA architecture with Service Worker caching",
+      "Gamified streak tracking and walking achievements"
     ]
   },
   {
-    id: "forge-saas-dashboard",
-    title: "Forge SaaS Dashboard",
-    description: "Interactive SaaS analytics dashboard built with React, TypeScript, Vite, Zustand, and Recharts.",
-    longDescription: "Commercial-grade interactive SaaS analytics dashboard featuring real-time data visualization, customizable drag-and-drop widget layouts, granular Zustand state selectors to prevent unnecessary re-renders, and responsive data tables with export capabilities.",
-    tags: ["React", "TypeScript", "Vite", "Zustand", "Recharts", "Tailwind CSS"],
-    category: "frontend",
-    isPrivate: true,
+    id: "guardrail",
+    title: "Guardrail",
+    category: "security",
+    description: "DevSecOps API Security Scanner inspecting REST endpoints for BOLA, XSS, and authentication flaws.",
+    longDescription: "High-performance DevSecOps API Vulnerability & Security Scanner. Web application where developers input OpenAPI / FastAPI schemas to run automated fuzzing tests for BOLA flaws, XSS, and JWT vulnerabilities, streaming real-time security telemetry over WebSockets.",
+    tags: ["FastAPI", "Python", "TypeScript", "React", "DevSecOps", "WebSockets"],
+    githubUrl: "https://github.com/Eragon1x2/guardrail",
+    isPrivate: false,
     featured: true,
-    metrics: ["⚡ Fast Vite Dev Server", "📊 10+ Interactive Recharts Widgets", "🎨 Custom Modular Component Architecture"],
+    metrics: ["🛡️ Real-Time BOLA & Fuzzing", "⚡ Sub-15ms Async Inspection", "📊 Live WebSockets Telemetry"],
     highlights: [
-      "Modular dashboard widgets with persistent layout state saved in browser storage",
-      "Optimized re-renders using granular Zustand state slices and memoized selectors",
-      "Responsive data tables with sorting, multi-column filtering, and CSV export",
-      "Dark & Light mode themes tailored for high-density SaaS user interfaces"
+      "Automated OpenAPI / FastAPI schema fuzzing for BOLA, XSS, SQLi, and JWT vulnerabilities",
+      "Asynchronous Python backend (FastAPI + httpx) featuring custom automated security test engine",
+      "Interactive React + TypeScript monitoring dashboard streaming live attack reports via WebSockets"
     ],
     architectureOverview: [
-      "State Management: Granular Zustand store slices with atomic selector subscriptions",
-      "Data Visualization: Custom Recharts wrappers with responsive container auto-scaling",
-      "Performance: React.memo() component boundaries and lazy-loaded chart routes"
+      "Backend: Async Python (FastAPI + httpx) Fuzzing Inspection Engine",
+      "Telemetry: WebSockets real-time streaming to React frontend dashboard",
+      "Detection: OWASP Top 10 rule patterns, BOLA access validation, and JWT verification"
     ]
   },
   {
     id: "smartest-one",
     title: "Smartest One",
-    description: "Full-Stack web platform powered by FastAPI backend and React frontend.",
+    category: "fullstack",
+    description: "Full-stack web platform combining a modern React frontend with FastAPI REST APIs and PostgreSQL.",
     longDescription: "Architected an end-to-end full-stack monorepo web platform showcasing clean REST API design, Pydantic data validation schemas, PostgreSQL persistence with SQLAlchemy async ORM, and React TypeScript frontend integration.",
     tags: ["FastAPI", "Python", "React", "TypeScript", "PostgreSQL", "Monorepo"],
-    category: "fullstack",
     isPrivate: true,
     featured: true,
-    metrics: ["🚀 Sub-50ms API Latency", "🛡️ Pydantic V2 Strict Schema Validation", "📦 Clean Monorepo Architecture"],
+    metrics: ["🚀 Sub-50ms API Latency", "🛡️ Pydantic V2 Schema Validation", "📦 Clean Monorepo Architecture"],
     highlights: [
       "Designed secure RESTful API endpoints with FastAPI and async SQLAlchemy ORM queries",
       "Monorepo architecture with synchronized TypeScript types and Pydantic API schemas",
@@ -119,56 +145,6 @@ export const PROJECTS: Project[] = [
       "Database: PostgreSQL with Alembic database migrations & Asyncpg driver",
       "Frontend: React TS monorepo integration with custom fetch API client"
     ]
-  },
-  {
-    id: "pointless-app",
-    title: "Pointless App",
-    description: "Gamified walking app that generates a random destination within a chosen radius. Stop thinking, start walking.",
-    longDescription: "An innovative real-world exploration PWA that prompts users to step out of routine by generating randomized geographical micro-adventures within a custom kilometer radius.",
-    tags: ["TypeScript", "React", "Geolocation API", "Leaflet/Maps", "PWA"],
-    category: "frontend",
-    githubUrl: "https://github.com/Eragon1x2/pointless-app",
-    isPrivate: false,
-    featured: true,
-    metrics: ["🗺️ Real-Time GPS Geo-fencing", "🎲 Random Coordinate Generator", "🏆 Gamified Micro-Quests"],
-    highlights: [
-      "Calculates distance and compass bearing using Haversine formula",
-      "Offline-first PWA architecture with Service Worker caching",
-      "Gamified streak tracking and walking achievements"
-    ]
-  },
-  {
-    id: "cover-letter-generator",
-    title: "AI Cover Letter Generator",
-    description: "AI-assisted tool tailored to parse job specifications and generate targeted cover letters.",
-    longDescription: "Automated candidate application utility leveraging LLM APIs to match applicant skills against job descriptions and produce personalized cover letters.",
-    tags: ["Python", "FastAPI", "OpenAI API", "TypeScript", "Tailwind CSS"],
-    category: "automation",
-    isPrivate: true,
-    featured: false,
-    metrics: ["⚡ 5-second Generation Time", "🎯 Keywords ATS Matching", "📝 Multiple Tone Customizers"],
-    highlights: [
-      "Integrates LLM prompt engineering with structured Pydantic output parsing",
-      "Export directly to PDF and plain text formats",
-      "Preset profiles for different developer tech stacks"
-    ]
-  },
-  {
-    id: "indeed-parser",
-    title: "Indeed Job Market Parser",
-    description: "High-performance Python web scraping utility for job market intelligence.",
-    longDescription: "Custom data extraction pipeline designed to crawl job market listings, extract salary ranges, required tech stacks, and remote availability.",
-    tags: ["Python", "Asyncio", "Playwright", "Data Extraction"],
-    category: "automation",
-    githubUrl: "https://github.com/Eragon1x2/indeed-parser",
-    isPrivate: false,
-    featured: false,
-    metrics: ["🕷️ Asynchronous Crawling Pipeline", "📊 Tech Stack Demand Aggregation"],
-    highlights: [
-      "Built resilient rate-limiting and user-agent rotation logic",
-      "Structured output exported to JSON/CSV for data analytics",
-      "Normalized skill keywords using regex matcher"
-    ]
   }
 ];
 
@@ -177,49 +153,61 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     category: "Frontend",
     iconName: "Layout",
     skills: [
-      { name: "React", level: 95, highlight: true },
-      { name: "TypeScript", level: 92, highlight: true },
-      { name: "Next.js", level: 85 },
-      { name: "TanStack Query", level: 88 },
-      { name: "Redux / Zustand", level: 90, highlight: true },
-      { name: "Tailwind CSS", level: 94, highlight: true },
-      { name: "SCSS / CSS Modules", level: 86 }
+      { name: "React", highlight: true },
+      { name: "TypeScript", highlight: true },
+      { name: "Next.js", highlight: true },
+      { name: "Tailwind CSS", highlight: true },
+      { name: "TanStack Query", highlight: false },
+      { name: "Redux / Zustand", highlight: false },
+      { name: "CSS / SCSS / CSS Modules", highlight: false }
     ]
   },
   {
     category: "Backend & Data",
     iconName: "Server",
     skills: [
-      { name: "FastAPI", level: 92, highlight: true },
-      { name: "Python", level: 90, highlight: true },
-      { name: "Node.js", level: 84 },
-      { name: "PostgreSQL", level: 88, highlight: true },
-      { name: "Supabase", level: 86 },
-      { name: "MongoDB", level: 80 }
+      { name: "Python", highlight: true },
+      { name: "FastAPI", highlight: true },
+      { name: "REST APIs", highlight: true },
+      { name: "PostgreSQL", highlight: true },
+      { name: "Supabase", highlight: false },
+      { name: "Node.js", highlight: false },
+      { name: "MongoDB", highlight: false }
     ]
   },
   {
-    category: "Security & DevSecOps",
-    iconName: "ShieldAlert",
+    category: "Performance",
+    iconName: "Zap",
     skills: [
-      { name: "DevSecOps & API Fuzzing", level: 95, highlight: true },
-      { name: "LLM Red-Teaming & Guardrails", level: 95, highlight: true },
-      { name: "XSS & CSP Hardening", level: 95, highlight: true },
-      { name: "SQL Injection Patches", level: 92, highlight: true },
-      { name: "BOLA & Access Control", level: 90, highlight: true },
-      { name: "JWT Hardening", level: 88 }
+      { name: "Core Web Vitals", highlight: true },
+      { name: "Bundle Optimization", highlight: true },
+      { name: "Code Splitting", highlight: true },
+      { name: "Caching Strategies", highlight: false },
+      { name: "Memory Leak Debugging", highlight: true },
+      { name: "Vite Optimization", highlight: false }
     ]
   },
   {
-    category: "DevOps & Tooling",
+    category: "Security",
+    iconName: "ShieldCheck",
+    skills: [
+      { name: "Web Application Security", highlight: true },
+      { name: "XSS", highlight: true },
+      { name: "SQL Injection", highlight: true },
+      { name: "BOLA / IDOR", highlight: true },
+      { name: "JWT & Authentication", highlight: false },
+      { name: "API Security", highlight: false }
+    ]
+  },
+  {
+    category: "Tools & Infrastructure",
     iconName: "Cpu",
     skills: [
-      { name: "Vite / Code Splitting", level: 94, highlight: true },
-      { name: "Docker", level: 82 },
-      { name: "GitHub Actions CI/CD", level: 85 },
-      { name: "Webpack / Bun", level: 80 },
-      { name: "Git / Linux", level: 90 },
-      { name: "Cursor AI", level: 92, highlight: true }
+      { name: "Git", highlight: true },
+      { name: "Docker", highlight: false },
+      { name: "GitHub Actions", highlight: false },
+      { name: "Linux", highlight: false },
+      { name: "Vite", highlight: false }
     ]
   }
 ];
@@ -232,12 +220,12 @@ export const EXPERIENCES: ExperienceItem[] = [
     location: "Remote",
     type: "Freelance",
     bullets: [
-      "Developing end-to-end full-stack web applications, DevSecOps tools, and API microservices for global clients.",
-      "Architecting secure REST backends using FastAPI and PostgreSQL, integrated with modern React TypeScript frontends.",
-      "Refactoring legacy web codebases, improving application stability, and optimizing page speed & Core Web Vitals.",
-      "Providing technical consulting on system architecture, database design, and cloud deployments under tight deadlines."
+      "Built and shipped React applications and Python/FastAPI backend services, integrating third-party APIs and business workflows.",
+      "Improved Core Web Vitals by identifying and fixing frontend performance bottlenecks, memory leaks, and inefficient rendering.",
+      "Refactored legacy React codebases to improve stability, maintainability, and development speed.",
+      "Worked directly with clients to translate business requirements into practical technical solutions and deliver features end-to-end."
     ],
-    techStack: ["React", "TypeScript", "FastAPI", "Python", "DevSecOps", "PostgreSQL", "Tailwind CSS"]
+    techStack: ["React", "Next.js", "TypeScript", "Python", "FastAPI", "Core Web Vitals", "API Integration"]
   },
   {
     period: "Dec 2025 – May 2026",

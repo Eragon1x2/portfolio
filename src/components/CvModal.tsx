@@ -14,7 +14,7 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
 
   const handleCopyCvText = () => {
     const text = `
-${PERSONAL_INFO.name} — ${PERSONAL_INFO.title}
+${PERSONAL_INFO.name} — ${PERSONAL_INFO.title} (${PERSONAL_INFO.subtitle})
 Email: ${PERSONAL_INFO.email} | Phone: ${PERSONAL_INFO.phone} | Location: ${PERSONAL_INFO.location}
 GitHub: ${PERSONAL_INFO.github} | LinkedIn: ${PERSONAL_INFO.linkedin}
 
@@ -80,7 +80,7 @@ ${PERSONAL_INFO.degree} — ${PERSONAL_INFO.university} (2023 - Present)
                 {PERSONAL_INFO.name}
               </h1>
               <p className="text-sm font-mono text-[#059669] uppercase font-extrabold mt-1">
-                {PERSONAL_INFO.title}
+                {PERSONAL_INFO.title} • {PERSONAL_INFO.subtitle}
               </p>
               <p className="text-xs text-slate-600 mt-2 max-w-xl">
                 {PERSONAL_INFO.bio}

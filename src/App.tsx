@@ -2,6 +2,7 @@ import { useState } from 'react';
 import confetti from 'canvas-confetti';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { Highlights } from './components/Highlights';
 import { Projects } from './components/Projects';
 import { SkillMatrix } from './components/SkillMatrix';
 import { Experience } from './components/Experience';
@@ -44,11 +45,12 @@ export function App() {
         unlockedAchievementsCount={unlockedAchievements.size}
       />
 
-      <main className="space-y-12">
+      <main className="space-y-6">
         <Hero
           onUnlockAchievement={handleUnlockAchievement}
           onOpenCvModal={() => setCvModalOpen(true)}
         />
+        <Highlights />
         <Projects />
         <SkillMatrix />
         <Experience />
